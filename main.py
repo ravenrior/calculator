@@ -8,8 +8,15 @@ root.geometry('280x490')
 root.resizable(False, False)
 root.bind('q', quit)
 
+res = ''
+
 def on_click(sym):
-    print(sym)
+    global res
+    if sym == '=':
+        print(res)
+        res = ''
+    else:
+        res += sym
 
 def create_buttons(button_dict, y, root: type[Tk] | None = root):
     return [My_Button(symbol, x, y, root).create_button(on_click) for x, symbol in button_dict.items()]
