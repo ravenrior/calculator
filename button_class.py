@@ -9,5 +9,5 @@ class My_Button:
         self.bg: str = bg
         self.fg: str = fg
 
-    def create_button(self) -> Button:
-        Button(self.root, text=self.sym, bg=self.bg, fg=self.fg, width=9, height=4).place(x=self.x, y=self.y)
+    def create_button(self, cmd) -> Button:
+        Button(self.root, text=self.sym, bg=self.bg, fg=self.fg, command=lambda: cmd(self.sym), width=9, height=4).place(x=self.x, y=self.y)
